@@ -99,3 +99,7 @@ $ awk '{print $1 "\t" $7 "\t" $4 "\t" $5 "\t" ($5-$4+1)}' BDGP6.Ensembl.81.gtf |
 3R	-	2554124	2554126	3
 
 2. Calculate the average length of all feaures 
+
+$ awk '{total = total + $5 - $4 +1} END {print total / NR}' BDGP6.Ensembl.81.gtf | head
+
+1138.77
