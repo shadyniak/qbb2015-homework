@@ -1,0 +1,3 @@
+2. 
+/Users/cmdb/qbb2015/day1 $ fastqc SRR072893.fastq
+SRR072893_fastqc.html
