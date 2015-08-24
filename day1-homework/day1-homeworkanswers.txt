@@ -1,3 +1,25 @@
 2. 
 /Users/cmdb/qbb2015/day1 $ fastqc SRR072893.fastq
+
 SRR072893_fastqc.html
+
+3.
+/Users/cmdb/qbb2015/genomes $ hisat -p 4 -x BDGP6 /Users/cmdb/qbb2015/day1/SRR072893.fastq -S mappedreads.sam
+
+21892898 reads; of these:
+21892898 (100.00%) were unpaired; of these:
+4868422 (22.24%) aligned 0 times
+16824131 (76.85%) aligned exactly 1 time
+200345 (0.92%) aligned >1 times
+77.76% overall alignment rate
+
+4.
+/Users/cmdb/qbb2015/genomes $ samtools view -b -S mappedreads.sam > mappedreads.bam
+
+/Users/cmdb/qbb2015/genomes $ samtools sort mappedreads.bam out.sorted 
+
+/Users/cmdb/qbb2015/genomes $ samtools index out.sorted.bam
+
+5. 
+/Users/cmdb/qbb2015/genomes $ stringtie out.sorted.bam -p 4 -e -G BDGP6.Ensembl.81.gtf -o stringtieoutput -B
+
