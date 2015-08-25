@@ -4,7 +4,14 @@ filename = "/Users/cmdb/qbb2015/stringtie/SRR072893/t_data.ctab"
 
 f = open(filename)
 
-for data in f:
-    fields = data.split()
-    if "tRNA" in fields[9]:
-        print data, ### the comma supresses the new line that is automatically generated with print
+# Iterate the file line by line
+for line_count, data in enumerate(f):
+    if line_count <= 10:
+        pass
+    elif line_count <= 15:
+        print data,
+    else:
+        break
+    
+     
+        
