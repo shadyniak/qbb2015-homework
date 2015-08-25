@@ -1,0 +1,9 @@
+Advanced Exercises 
+
+1. 
+/Users/cmdb/qbb2015/genomes $ grep -v "^@" mappedreads.sam | cut -f3 | sort | uniq -c 
+
+2. 
+/Users/cmdb/qbb2015/genomes $ grep -v "^@" mappedreads.sam | cut -f3 | sort | uniq -c | sort -n
+
+4868452 *
