@@ -11,7 +11,7 @@ mean = np.mean(df["FPKM"])
 stddev = np.std(df["FPKM"])
 
 #mu, sigma = 
-x = mean + stddev * p.randn(10000)
+x = mean + stddev * p.randn(1000)
 
 #mean = 13.4813251272 
 #stddev = 88.6996601083
@@ -21,6 +21,10 @@ p.setp(patches, 'facecolor', 'g', 'alpha', 0.75)
 
 y = p.normpdf(bins, mean, stddev)
 
+
 plt.figure()
-plt.plot(bins,  y, 'k--', linewidth = 1.5)
+plt.plot(bins, y, 'k--', linewidth = 1.5)
+plt.xlabel("FPKM")
+plt.ylabel("Frequency A.U.")
+plt.title("Density Plot")
 plt.savefig("density.png")
