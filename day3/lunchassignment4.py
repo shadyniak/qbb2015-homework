@@ -15,7 +15,7 @@ M = np.log2(R/G)
 A = 0.5 * np.log2(R * G)
 
 plt.figure()
-plt.scatter(M, A)
+plt.scatter(A, M)
 plt.xlabel("Data distribution")
 plt.ylabel("Log2-fold difference")
 plt.title("Comparison MA plot")
