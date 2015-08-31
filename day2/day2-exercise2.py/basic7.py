@@ -11,7 +11,11 @@ for data in f:
         pass 
     else:
         fields = data.split()
-        if (str(fields[2]) in dictionary and str(fields[2] > 10000 and str(fields[2]))):
+        gene_name = fields[2]
+        start = fields[3]
+        start.lstrip(("LN:"))
+        start = int(start)
+        if ((str(fields[2]) in dictionary) and 10000 < start < 20000):
             dictionary[str(fields[2])] += 1 
 for key, value in dictionary.iteritems():
     print key, value  
